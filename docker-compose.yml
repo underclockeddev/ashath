@@ -1,0 +1,29 @@
+version: '3'
+services:
+  webui:
+    container_name: 'ashath-webui'
+    image: 'underclockeddev/ashath-webui:latest'
+    ports:
+      - "8080:80"
+      - "8081:443"
+    networks:
+      - ashath
+    restart: always
+    volumes:
+      - keys:/root/.aspnet/DataProtection-Keys:rw
+  db:
+    container_name: 'ashath-db'
+    image: "underclockeddev/ashath-db:latest"
+    networks:
+      - ashath
+    restart: always
+    volumes:
+      - data:/var/lib/mysql
+
+networks:
+  ashath: {}
+
+volumes:
+  keys:
+  data:
+  
