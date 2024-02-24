@@ -3,6 +3,9 @@ another self-hosted app for tracking habits
 
 ---
 
+## Demo
+https://ashath.teets.us/
+
 ## Requirements
 - The latest version of Docker
 
